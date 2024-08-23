@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product System</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="p-5 w-75 mx-auto">
+        <h2 class="fw-bold text-center">Product System</h2>
+
+        <form action="#">
+
+            <label for="productNameInput" class="fw-semibold mb-2 mt-4">Name :</label>
+            <input type="text" id="productNameInput" class="form-control">
+
+            <label for="productCategoryInput" class="fw-semibold mb-2 mt-4">Category :</label>
+            <input type="text" id="productCategoryInput" class="form-control">
+
+            <label for="productPriceInput" class="fw-semibold mb-2 mt-4">Price :</label>
+            <input type="text" id="productPriceInput" class="form-control">
+
+            <label for="productDescInput" class="fw-semibold mb-2 mt-4">Description :</label>
+            <input type="text" id="productDescInput" class="form-control">
+
+            <label for="productCountInput" class="fw-semibold mb-2 mt-4">Count :</label>
+            <input type="number" id="productCountInput" class="form-control w-25">
+
+            <button id="addButton" class="btn btn-info fw-semibold mt-5" onclick="addProduct()">Add Product</button>
+            <button id="updateButton" class="btn btn-warning fw-semibold mt-5" style="display: none;"
+                onclick="saveChange()">Save Change</button>
+            <button id="deleteAllBtn" class="btn btn-danger mx-3 fw-semibold mt-5" onclick="deleteAll()">Delete
+                All</button>
+
+            <div class="search mt-5 text-center">
+                <input type="text" id="productSearchInput" onkeyup="SearchProducts(this.value)" placeholder="Search"
+                    class="form-control w-75 m-auto my-3">
+
+                <button onclick="getSearchType(this.id)" id="SearchByName"
+                    class="btn btn-secondary mx-3 mt-3 fw-semibold">Search By Name</button>
+                <button onclick="getSearchType(this.id)" id="SearchByCategory"
+                    class="btn btn-success mx-3 mt-3 fw-semibold">Search By Category</button>
+            </div>
+
+        </form>
+
+        <table class="table mt-5  text-center">
+            <thead class="table-dark rounded-2">
+                <th>ID</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Count</th>
+                <th>Description</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            <tbody id="tableBody">
+
+            </tbody>
+
+            <tfoot class="py-3" id="tableFooter">
+
+            </tfoot>
+        </table>
+    </div>
+
+    <script src="JS/index.js"></script>
+</body>
+
+</html>
